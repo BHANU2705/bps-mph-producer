@@ -12,7 +12,7 @@
 	</properties>
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
-		<finalName>mph-producer</finalName>
+		<finalName>bps-mph-producer</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
