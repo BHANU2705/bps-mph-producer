@@ -29,7 +29,7 @@ public class ProducerApp {
 				String input = args[i];
 				String payer = input.split("-")[0];
 				int count = Integer.parseInt(input.split("-")[1]);
-				inputMap.put(Payer.valueOf(payer), count);
+				inputMap.put(Payer.valueOf(payer.toUpperCase()), count);
 			}
 		}
 		return inputMap;
@@ -41,7 +41,7 @@ public class ProducerApp {
 			ProducerRecord<Long, String> record = new ProducerRecord<Long, String>(topic.name(), msg);
 			try {
 				RecordMetadata metadata = producer.send(record).get();
-				System.out.println("[Producer] Record sent with message " + msg + " and offset " + metadata.offset());
+				System.out.println("[Producer] Record sent with message " + msg + ", offset " + metadata.offset());
 			} catch (ExecutionException e) {
 				System.out.println("Error in sending record");
 				System.out.println(e);
